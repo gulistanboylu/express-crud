@@ -4,6 +4,7 @@ var router = express.Router();
 let landing =require('../controllers/landing');
 
 /* GET home page. */
-router.post('/', landing.getLanding);
+router.get('/', landing.getLanding);
+router.post('/', landing.submitLead);
 
 module.exports = router;
