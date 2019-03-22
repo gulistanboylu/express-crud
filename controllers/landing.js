@@ -2,7 +2,7 @@
 const models = require('../models');
 
 exports.getLanding = function(req, res, next) {
-    res.render('landing', { title: 'Express' });
+    res.render('landing', { title: 'Express lalala' });
 };
 
 
@@ -11,6 +11,13 @@ exports.submitLead = function(req, res, next) {
     return models.Lead.create({
         email: req.body.lead_email
     }).then( lead => {
-        res.redirect('/');
+        res.redirect('/leads');
+    })
+};
+
+exports.showLeads = function(req, res, next) {
+    // res.render('landing', { title: 'here another place' });
+    return models.Lead.findAll().then(leads => {
+        res.render('landing', { title: 'List of emails', leads: leads })
     })
 };
