@@ -1,11 +1,11 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "gulistan",
+    "password": "12345",
     "database": "express-mvp-db",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 5432
+    "port": 3306
   },
   "test": {
     "username": "root",
