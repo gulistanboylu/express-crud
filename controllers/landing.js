@@ -21,3 +21,14 @@ exports.showLeads = function(req, res, next) {
         res.render('landing', { title: 'List of emails', leads: leads })
     })
 };
+
+exports.showLead = function(req, res, next) {
+    return models.Lead.findOne({
+        where: {
+            id: req.params.leadId
+        }
+    }).then ( lead => {
+        res.render('lead', { lead: lead });
+    })
+};
+

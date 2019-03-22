@@ -9,6 +9,8 @@ router.get('/', landing.getLanding);
 router.post('/', landing.submitLead);
 //router.get('/leads', landing.showLeads);
 router.get('/leads', landing.showLeads);
+router.get('/lead/:leadId', landing.showLead);
+
 
 // const sequelize = new Sequelize('mariadb://gulistan:12345@localhost:3306/express-mvp-db');
 // sequelize
