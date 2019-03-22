@@ -32,3 +32,24 @@ exports.showLead = function(req, res, next) {
     })
 };
 
+exports.showEditLead = function(req, res, next) {
+    return models.Lead.findOne({
+        where: {
+            id: req.params.leadId
+        }
+    }).then ( lead => {
+        res.render('lead/editLEad', { lead: lead });
+    })
+};
+
+exports.editLead = function(req, res, next) {
+    return models.Lead.update({
+        email: req.body.lead_email
+    }, {
+        where: {
+            id : req.params.leadId
+        }
+    }).then(result => {
+        res.redirect('/lead/' + req.params.leadId);
+    })
+};
